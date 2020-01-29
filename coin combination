@@ -1,0 +1,27 @@
+
+
+import java.io.*;
+
+class GFG {
+    static int c=0;
+    public static void coincombination(int denom[],int ta,String ans,int ls)
+    {
+        if(ta==0)
+        {
+            c++;
+            System.out.println(c+" "+ans);
+            return;
+        }
+        for(int i=ls;i<denom.length;i++)
+        {
+            if(ta>=denom[i])
+            {
+            coincombination(denom,ta-denom[i],ans+denom[i],i);
+            }
+        }
+    }
+	public static void main (String[] args) {
+		int denom[]={2,3,5,6};
+		coincombination(denom,10,"",0);
+	}
+}
